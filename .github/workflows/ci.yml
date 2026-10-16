@@ -1,0 +1,24 @@
+
+name: My Portfolio CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Print welcome message
+        run: echo "Welcome to GitHub Actions!"
+
+      - name: Check HTML file
+        run: test -f index.html
+
+      - name: Print success message
+        run: echo "CI pipeline completed successfully!"
